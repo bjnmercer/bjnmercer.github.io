@@ -15,7 +15,18 @@ I'm fond of F#, so if that's your thing, hit the subscribe button, and I won't s
 
 OK, let's try some F# code:
 
-```f#
+```fsharp
+let test = "Blah"
+failwith "Useless example"
+```
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
+```ocaml
 let test = "Blah"
 failwith "Useless example"
 ```
