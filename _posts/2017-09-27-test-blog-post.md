@@ -33,4 +33,8 @@ failwith "Useless example"
 
 Update 1: Well it appears F# isn't a supported language for the syntax highlighter. Pretty annoying, considering brainfuck, MS-DOS batch files and _even_ MATLAB are supported.
 
+Update 2: 
+![!useful image](/assets/oh-god-how-did-this-get-here.jpg)
+
+
 (Note 2: Precisely _none_ of you will realise I've lifted this text pretty much straight from my other automotive website "Project Crown". Don't bother googling, you won't find it.)
