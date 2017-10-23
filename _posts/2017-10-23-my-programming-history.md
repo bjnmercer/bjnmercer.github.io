@@ -27,7 +27,7 @@ The demo program, included in the printed manual, used QBASIC to send the comman
 
 <s>I recall doing something like this</s> I actually found the very first "program", apparently on the 7th of September, 1999:
 
-![My very first program](/assets/learning/learning1.png)
+![My very first program](/assets/learning/learning1.PNG)
 
 *Above: hilariously named INTERFAC.E due to MS-DOS 8.3 file format. No wonder I never found this file again.*
 
@@ -37,37 +37,37 @@ I cannot recall exactly how I got past that stumbling block. But I do still have
 
 There was also a heap of random text files with the contents: "This is saved to the file." After some confusion, I realised it was this example:
 
-![File IO example](/assets/learning/learning2.png)
+![File IO example](/assets/learning/learning2.PNG)
 
 And I obviously had no idea what was going on...
 
 Interestingly, I had learned how to do graphics first, with this circuit diagram:
 
-![Circuit Drawing](/assets/learning/learning3.png)
+![Circuit Drawing](/assets/learning/learning3.PNG)
 
 This was before I learned how to put text on the screen with PROGRAM.BAS. It seems to mimic the QBASIC startup dialog.
 
-![Putting text on the screen](/assets/learning/learning4.png)
+![Putting text on the screen](/assets/learning/learning4.PNG)
 
 About 3 months after the very first program (with lots of stuffing around), I had come up with a program called CONTROL.BAS, which was meant to be the flight control software. Recall that I was learning QBASIC in order to build a program that would control the 8-relay card from Jaycar Electronics.
 
-![ATV Controller Program: startup screen](/assets/learning/control1.png)
+![ATV Controller Program: startup screen](/assets/learning/control1.PNG)
 
 For some reason I felt it necessary to emphasise that this software was for _FLIGHT CONTROL --ONLY--_; like as if someone might try to use it to control a Nuclear Reactor?
 
 Here's some more screenshots from that program: 
 
-![ATV Controller Program: intro screen](/assets/learning/control2.png)
+![ATV Controller Program: intro screen](/assets/learning/control2.PNG)
 
 I do like how I've stated the environment used to build this program.
 
-![ATV Controller Program: main menu](/assets/learning/control3.png)
+![ATV Controller Program: main menu](/assets/learning/control3.PNG)
 
 I liked green on dark green.
 
-![ATV Controller Program: engine setup screen](/assets/learning/control4.png)
+![ATV Controller Program: engine setup screen](/assets/learning/control4.PNG)
 
-![ATV Controller Program: engine setup screen](/assets/learning/control5.png)
+![ATV Controller Program: engine setup screen](/assets/learning/control5.PNG)
 
 This was supposed to be a scanner, just like Microsoft ScanDisk.
 
@@ -77,13 +77,13 @@ As time went on I realised I wanted to make games (as it was also probably becom
 
 Around the year 2000 I picked up a book on programming in QBASIC, which had a bunch of simple examples (mostly calculations). Also at some point I had downloaded a game called Super Galactic Wars ([source code here](http://nordman.tripod.com/galactic.bas)):
 
-![Galactic](/assets/learning/galactic.png)
+![Galactic](/assets/learning/galactic.PNG)
 
 I remember being confounded by the code for generating the scrolling star pattern. I just could not fathom it.
 
 Attempts at games quickly went nowhere.
 
-![A fantasic example of me not quite getting arrays](/assets/learning/learning7.png)
+![A fantasic example of me not quite getting arrays](/assets/learning/learning7.PNG)
 
 *Above: A fantasic example of me not quite getting arrays*
 
@@ -123,13 +123,13 @@ What I do remember was creating the screen and menu system first. This is confir
 
 The menu system was special: I put each menu item into an array.
 
-![BASIC source for a rudimentary drop-down menu system](/assets/learning/menu1.png)
+![BASIC source for a rudimentary drop-down menu system](/assets/learning/menu1.PNG)
 
 *Above: Probably the very first instance of me understanding the point of arrays*
 
 This allowed me to easily do the menu highlight and move the selection up or down using the arrow keys.
 
-![Output from the test menu code in the previous image](/assets/learning/menu2.png)
+![Output from the test menu code in the previous image](/assets/learning/menu2.PNG)
 
 *Above: note how I start the array at 2 to coincide with the row position on the screen*
 
@@ -137,11 +137,11 @@ Such code _not_ using arrays would require a massive case statement and a lot of
 
 In FileSAVER, I used global arrays to define the menus like so:
 
-![Arrays that defined the menues](/assets/learning/menu5.png)
+![Arrays that defined the menues](/assets/learning/menu5.PNG)
 
 Now of course, I didn't yet understand that _arrays were generic_ themselves, so I ended up _duplicating the code for every blasted menu_. Yes. To my early mind, an array named file$() was not the same as an array called options$(). But, at least this was progress.
 
-![Code too horrible to comment on](/assets/learning/menu3.png) ![Code too horrible to comment on](/assets/learning/menu4.png)
+![Code too horrible to comment on](/assets/learning/menu3.PNG) ![Code too horrible to comment on](/assets/learning/menu4.PNG)
 
 *Above: sigh*
 
