@@ -4,6 +4,8 @@ title: "Choosing a Graphics Library"
 date: 2017-11-28
 ---
 
+>(This article is part of the [BGC Rewrite Series](/blog/2017/10/03/bgc-rewrite-series))
+
 In QBASIC, drawing graphics was easy. You set a "graphics" screen mode and started drawing. QBASIC offered several primitives:
 - PSET (draw a single pixel)
 - LINE
