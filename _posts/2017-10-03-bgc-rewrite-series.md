@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "'Battle Ground Copyright' Rewrite Series"
+title: "The 'Battle Ground Copyright' Rewrite Series"
 date: 2017-10-03
 ---
 
-This series is about the rewriting of a two player, 2d vector tank combat game that I originally wrote in QBASIC, called _Battle Ground Copyright_. It is called that because it shamelessly rips off several ideas from multiple games:
+This is a series of articles about the rewriting of _Battle Ground Copyright_: a two player, 2d vector tank combat game that I originally wrote in QBASIC. This is the main index for those articles, where you will find the table of contents below.
+
+It is called "Battle Ground Copyright" because it shamelessly rips off several ideas from multiple games:
 - The _Battle Force Tank_ from Recoil (as the tank)
 - The _Plasma Battery_ from Total Annihilation (as a weapon)
 - The [_Auto-Cannon_](http://kknd-the-krush-kill-n-destroy.wikia.com/wiki/Autocannon_Tank) from Krush, Kill n Destroy (as a weapon)
@@ -18,7 +20,7 @@ Here is a screenshot:
 
 *Above: Battle Ground Copyright, a 2d vector tank game that poorly approximates Liero while ripping off several ideas from other games*
 
-You'll find the history behind this game underneath the Table of Contents, if you want to know more.
+You'll find the history of this game underneath the Table of Contents if you want to know more.
 
 ## Table of Contents
 
