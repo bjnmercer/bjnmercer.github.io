@@ -17,6 +17,24 @@ It _probably_ would have been easier to use sprites, but here are my (_probably 
 
 Hence this article. <s>So that's the plan, let's get started</s> With that out of the way, we can begin.
 
+## What is the QBASIC DRAW function?
+
+QBASIC had several functions for doing simple primitives such as lines, circles and pixels.
+
+For more complex shapes, it had the DRAW function, which was essentially a cut down version of [LOGO](https://en.wikipedia.org/wiki/Logo_(programming_language)).
+
+![The DRAW Command help screen](/assets/bgc/draw-help.PNG)
+
+Each command represents a direction to move, and the amount of pixels to move. If it is a "Blind move", then no line is drawn. I think it easier to show you rather than explain. Here is the DRAW commands that make up the eponymous BGC tank:
+
+```basic
+tank$ = "BL5 BU5 BR1 R8 F D2 G D2 F D2 G L8 H U2 E U2 H U2 E"
+```
+
+And here is the graphical output of those commands.
+
+![The Tank](/assets/bgc/bgctank.PNG)
+
 ## DrawCommand
 
 First up, I decided to use a Discriminated Union to represent all the DRAW commands. You can read more about Discriminated Unions at the [F# for Fun and Profit site](https://fsharpforfunandprofit.com/posts/discriminated-unions/).
@@ -47,6 +65,9 @@ For example, here is the tank from the original QBASIC game:
 tank$ = "BL5 BU5 BR1 R8 F D2 G D2 F D2 G L8 H U2 E U2 H U2 E"
 ```
 
+This draws the eponymous tank:
+![The Tank](/assets/bgc/bgctank.PNG)
+
 And here is the DrawCommand version in F#
 ```fsharp
 //tank$ = " BL5     BU5     BR1     R8   F    D2   G    D2   F    D2   G    L8   H    U2   E    U2   H    U2   E"
@@ -54,6 +75,7 @@ let tank = [B(L 5); B(U 5); B(R 1); R 8; F 1; D 2; G 1; D 2; F 1; D 2; G 1; L 8;
 ```
 
 Thanks to the succint syntax of F#, expressing a list of DrawCommands is almost identical to the QBASIC DRAW version.
+
 
 ## Building Coordinates
 
