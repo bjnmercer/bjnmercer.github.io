@@ -65,9 +65,6 @@ For example, here is the tank from the original QBASIC game:
 tank$ = "BL5 BU5 BR1 R8 F D2 G D2 F D2 G L8 H U2 E U2 H U2 E"
 ```
 
-This draws the eponymous tank:
-![The Tank](/assets/bgc/bgctank.PNG)
-
 And here is the DrawCommand version in F#
 ```fsharp
 //tank$ = " BL5     BU5     BR1     R8   F    D2   G    D2   F    D2   G    L8   H    U2   E    U2   H    U2   E"
