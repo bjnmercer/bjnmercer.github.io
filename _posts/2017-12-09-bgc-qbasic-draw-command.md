@@ -76,7 +76,7 @@ Thanks to the succint syntax of F#, expressing a list of DrawCommands is almost 
 
 ## Building Coordinates
 
-Next up was a function to take the above list of Draw Commands, and map these into a list of pixel co-ordinates. Not all the DrawCommand cases are not handled.
+Next up was a function to take the above list of Draw Commands, and map these into a list of pixel co-ordinates. Note that not all the DrawCommand cases are handled.
 
 ```fsharp
 let buildCoords (commands:DrawCommand list) =
@@ -152,7 +152,7 @@ val nextCoord :
 
 The basic idea behind `nextCoord` is to take a previous tuple of pixel coordinates, and calculate the next coordinates relative to the previous, depending on the DU case. This is accomplished using a match expression. At the same time, another match expression is used to determine if it is a Blind move. You can read more about [Match expressions at the excellent F# for Fun and Profit site](https://fsharpforfunandprofit.com/posts/match-expression/).
 
-Now I could have made this functional external (i.e. not nested), but FSI allows you to work directly with it by selecting code block and evaluating it in Interactive. It's worth mentioning that this function is specifically designed to work with `List.scan` function, which I will get to later on in this article.
+Now I could have made this function external (i.e. not nested), but FSI allows you to work directly with it by selecting code block and evaluating it in Interactive. It's worth mentioning that this function is specifically designed to work with the `List.scan` function, which I will get to later on in this article.
 
 Here is an example of this function in action. If the previous co-ordinates was 10x,10y and we want to move by E5 -- Diagonally Up and Right -- then we should see 10x+5,10y-5
 
@@ -168,7 +168,7 @@ Note that the first value in the tuple is `true`, this is because it is not a bl
 val it : bool * (int * int) = (false, (15, 5))
 ```
 
-The Blind move is accomplished by storing a `DrawCommand` inside the B DU case. The nextCoord function matches on the B case and extracts the DrawCommand, and recursively calls itself.
+The Blind move is accomplished by storing a `DrawCommand` inside the B DU case. The `nextCoord` function matches on the B case and extracts the `DrawCommand`, and recursively calls itself.
 
 This demonstrates a nice feature of Discriminated Unions: the ability to refer to itself. This makes representing tree structures trivial. However, I discovered later that this is not the best way to handle this scenario. I will talk about that in the next article.
 
@@ -176,15 +176,15 @@ Now at this point you may be wondering how a function that only relies on the la
 
 I'll once again refer you to [F# For Fun and Profit for the indepth treatment of this function](https://fsharpforfunandprofit.com/posts/list-module-functions/#19), but hopefully this example will serve to give an idea of what it does.
 
-List.scan takes a list of values as input, a function for iterating over those values, as well as an _initial starting state_. Your iterator function is fed the last calculation from your function as input (or if it is the first value, the _initial starting state_), as well as the next value in the input list.
+`List.scan` takes a list of values as input, a function for iterating over those values, as well as an _initial starting state_. Your iterator function is fed the last calculation from your function as input (or if it is the first value, the _initial starting state_), as well as the next value in the input list.
 
-Hopefully you will now recognise that nextCoord has that exact function signature:
+Hopefully you will now recognise that `nextCoord` has that exact function signature:
 
 ```fsharp
 bool * (int * int) -> command:DrawCommand -> bool * (int * int)
 ```
 
-This is the output from List.scan when it is fed the tank DrawCommand list. Note how I need to provide (false, (0,0)) as the initial starting state:
+This is the output from `List.scan` when it is fed the tank `DrawCommand` list. Note how I need to provide `(false, (0,0))` as the initial starting state:
 
 ```
 > tank |> List.scan nextCoord (false, (0,0));;
@@ -198,7 +198,7 @@ val it : (bool * (int * int)) list =
 
 Also note how the initial starting state is the very first item in the list returned. List.scan has taken care of the iteration, and maintaining the state for us. As such it was a good candidate for producing the coordinates as it works very similar to the QBASIC DRAW command, where each command moves relative to the last command.
 
-OK, so now we have a tuple of values, lets see if the output was correct. To do this, I will use the FSharp.Charting library. You can get the binaries at [fslab.org](https://fslab.org/FSharp.Charting/). The documentation on getting started suggests that you can simply #load the FSharp.Charting.fsx script, but it had some issues so I just referenced the DLL directly in my FSX file.
+OK, so now we have a tuple of values, lets see if the output was correct. To do this, I will use the FSharp.Charting library. You can get the binaries at [fslab.org](https://fslab.org/FSharp.Charting/). The documentation on getting started suggests that you can simply `#load` the FSharp.Charting.fsx script, but it had some issues so I just referenced the DLL directly in my FSX file.
 
 ```fsharp
 #r "System.Windows.Forms.DataVisualization.dll"
@@ -210,7 +210,7 @@ module FsiAutoShow =
     fsi.AddPrinter(fun (ch:FSharp.Charting.ChartTypes.GenericChart) -> ch.ShowChart(); "(Chart)")
 ```
 
-The Chart.Line function expects a list of two-element tuples -- in this case (int * int). Right now, List.scan is returning a (bool * (int * int)) list, so I feed the output to `List.map snd`. The `snd` function extracts the second element of the tuple:
+The `Chart.Line` function expects a list of two-element tuples -- in this case `(int * int)`. Right now, `List.scan` is returning a `(bool * (int * int)) list`, so I feed the output to `List.map snd`. The `snd` function extracts the second element of the tuple:
 
 ```
 > tank |> List.scan nextCoord (false, (0,0)) |> List.map snd;;
@@ -233,7 +233,7 @@ This pops up a window containing a line chart:
 
 However, the output is upside down. This is because the chart has it's Y-axis starting from the bottom rather than the top.
 
-This is essentially how I arrived at the buildCoords function.
+This is essentially how I arrived at the `buildCoords` function.
 
 ### Bonus round: co-ordinate rotation
 
