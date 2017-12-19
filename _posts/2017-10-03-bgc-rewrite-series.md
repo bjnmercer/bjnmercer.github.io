@@ -25,6 +25,8 @@ You'll find the history of this game underneath the Table of Contents if you wan
 ## Table of Contents
 
 - [Choosing a Graphics Library](/blog/2017/11/28/bgc-graphics-library)
+- [Reverse Engineering the QBASIC DRAW Command](/blog/2017/12/09/bgc-qbasic-draw-command)
+- [Parsing QBASIC DRAW commands with FParsec](/blog/2017/12/19/bgc-parsing-qbasic-draw-commands-fparsec)
 
 
 ## History
