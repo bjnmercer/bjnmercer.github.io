@@ -301,7 +301,7 @@ let pMoveType:Parser<DrawMoveType,unit> =
     
 ```
 
-The `anyOf` parser attempts to match `B` or `N`, and if it does match, the value is passed to the function `convertToDrawMoveType` to translate to a DrawMoveType` DU using the `|>>` function. If `anyOf` fails, the `attempt` function rolls back to the start and the `<|>` function then chooses `preturn P`.
+The `anyOf` parser attempts to match `B` or `N`, and if it does match, the value is passed to the function `convertToDrawMoveType` to translate to a `DrawMoveType` DU using the `|>>` function. If `anyOf` fails, the `attempt` function rolls back to the start and the `<|>` function then chooses `preturn P`.
 
 In action:
 
