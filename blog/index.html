@@ -3,8 +3,20 @@ layout: default
 title: BrendoTRON3000's Programming Blog
 ---
 	<h1>{{ page.title }}</h1>
+  
+  Welcome to the Blog. I have quite a few projects on the go at any time. These projects range from electronics to game programming to <s>trying to be like clickspring</s> machining projects.
+  
+  You can find the main index pages to these projects below, and a link to every blog post is at the bottom of this page.
+  
+  <dl>
+    <dt><a href="/blog/2017/10/03/bgc-rewrite-series">The Battle Ground Copyright Rewrite Series</a></dt>
+    <dd>
+      In this series, I chronical the rewrite of an old QBASIC game I wrote in highschool in F# (fsharp), because, why not?
+    </dl>
+  </dl>
+  
+  <h2>All blog posts ever</h2>
 	<ul class="posts">
-
 	  {% for post in site.posts %}
 	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	  {% endfor %}
