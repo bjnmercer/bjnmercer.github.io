@@ -10,7 +10,7 @@ In the previous article, I discussed [handling colour commands with the FParsec 
 
 In other words, the Line Rendering Engine.
 
-## End of Article?
+## The Line Renderer
 
 ```fsharp
         lines         
@@ -25,6 +25,8 @@ In other words, the Line Rendering Engine.
 And there you have it:
 
 ![all lines are correctly rendered with their colors](/assets/bgc/line5.PNG)
+
+## End of Article?
 
 Note: I have a suspicion that my articles are generally considered too long, and thus are subject to the *TL;DR Effect*, so I thought I'd try things a little different and show the conclusion first. Those who are skimming will at least see the end result of the massive article below.
 
