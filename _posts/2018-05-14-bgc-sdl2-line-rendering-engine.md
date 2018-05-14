@@ -543,7 +543,7 @@ let rotateLines (angle:float) (lines:(Vertex * Vertex) list) =
     
 ```
 
-I am essentially hard-coding the point translation, but the code is otherwise identical. This suggests I could use a *Higher Ordered Function* to create a general `transformLine` function like so:
+...I am essentially hard-coding the point translation, but the code is otherwise identical. This suggests I could use a *Higher Ordered Function* to create a general `transformLine` function like so:
 
 ```fsharp
 let transformLines transform (lines:(Vertex * Vertex) list) =    
@@ -551,7 +551,7 @@ let transformLines transform (lines:(Vertex * Vertex) list) =
     
 ```
 
-From which I could dervice specific functions
+...from which I could derive specific functions
 
 ```fsharp
 let scaleLines (factor:float) = transformLine (scalePoint factor)
@@ -559,7 +559,7 @@ let translateLine (dx,dy) = transformLine (translatePoint (dx,dy))
 let rotateLines (angle:float) = transformLines (rotatePoint (angle))    
 ```
 
-But mathematically there's no reason why scaling, rotatating and translating have to be calculated as descrete steps. In that case, I could make use of function composition:
+...but mathematically there's no reason why scaling, rotatating and translating have to be calculated as descrete steps. In that case, I could make use of function composition:
 
 ```fsharp
         lines         
