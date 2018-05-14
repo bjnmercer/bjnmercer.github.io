@@ -600,7 +600,7 @@ The main difference is the `|>` operator will give you a value, whereas `>>` wil
 >   let transform = (rotatePoint (angle)) |> (translatePoint (200.0, 200.0));;
   ------------------------------------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-C:\Users\Brendon\AppData\Local\Temp\stdin(16,43): error FS0001: Type mismatch. Expecting a
+stdin(16,43): error FS0001: Type mismatch. Expecting a
     (float * float -> float * float) -> 'a    
 but given a
     float * float -> float * float    
