@@ -1,0 +1,85 @@
+Why is this crashing?
+
+Any attempts to use the screen while the music was playing would eventually cause a crash.
+
+```c
+  if (! musicPlayer.useInterrupt(VS1053_FILEPLAYER_PIN_INT)) {
+    drawWarning("INTERRUPT FAIL");
+  }
+```
+
+OK what's `VS1053_FILEPLAYER_PIN_INT` ?
+
+```c
+#define VS1053_FILEPLAYER_PIN_INT 5
+```
+
+Errr... And what do I have?
+
+```c
+#define OLED_DC     7
+#define SPI_OLED_CS 6
+#define OLED_RESET  5
+SSD1306AsciiSpi display; //display(SPI_MOSI, SPI_CLK, OLED_DC, OLED_RESET, SPI_OLED_CS);
+```
+
+Attempting to pass in 2 just triggered the INTERRUPT FAIL warning.
+
+```c
+  if (! musicPlayer.useInterrupt(2)) {
+    drawWarning("INTERRUPT FAIL");
+  }
+
+
+so I changed VS1053_FILEPLAYER_PIN_INT to 2
+
+```c
+  if (! musicPlayer.useInterrupt(2)) {
+    drawWarning("INTERRUPT FAIL");
+  }
+```
+
+I also uncommented out some Serial code
+
+```c
+  if (type == VS1053_FILEPLAYER_PIN_INT) {
+    int8_t irq = digitalPinToInterrupt(_dreq);
+    Serial.print("Using IRQ "); Serial.println(irq);
+```
+
+Apparently using IRQ 0
+
+
+I changed it back to Pin 5, same result
+
+In both cases, as long as I did not attempt to update the screen, everything was fine.
+
+I apparently can't read
+
+  if (type == VS1053_FILEPLAYER_PIN_INT) {
+    int8_t irq = digitalPinToInterrupt(_dreq); <<<<<<< it's not using VS1053_FILEPLAYER_PIN_INT anyway!
+    Serial.print("Using IRQ "); Serial.println(irq);
+    if (irq == -1) 
+      return false;
+#if defined(SPI_HAS_TRANSACTION) && !defined(ESP8266) && !defined(ESP32) && !defined(ARDUINO_STM32_FEATHER)
+    SPI.usingInterrupt(irq);
+#endif
+    attachInterrupt(irq, feeder, CHANGE);
+    return true;
+  }
+
+
+check if parameters are correct  
+
+  Adafruit_VS1053_FilePlayer (int8_t rst, int8_t cs, int8_t dcs, int8_t dreq,
+			      int8_t cardCS);
+  
+I nearly got tripped up by Adafruit_VS1053 constructor, which has CS and dreq swapped... better check they realise this too
+
+class Adafruit_VS1053 {
+ public:
+  Adafruit_VS1053(int8_t mosi, int8_t miso, int8_t clk, 
+		  int8_t rst, int8_t cs, int8_t dcs, int8_t dreq);
+  Adafruit_VS1053(int8_t rst, int8_t cs, int8_t dcs, int8_t dreq);
+
+  
