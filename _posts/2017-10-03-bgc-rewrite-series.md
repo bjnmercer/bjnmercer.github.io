@@ -28,7 +28,7 @@ You'll find the history of this game underneath the Table of Contents if you wan
 - [Reverse Engineering the QBASIC DRAW Command](/blog/2017/12/09/bgc-qbasic-draw-command)
 - [Parsing QBASIC DRAW commands with FParsec](/blog/2017/12/19/bgc-parsing-qbasic-draw-commands-fparsec)
 - [Parsing QBASIC DRAW commands with FParsec (Round II)](/blog/2108/04/03/bgc-parsing-qbasic-draw-commands-fparsec-part2)
-
+- [Line Rendering Engine with SDL2](/blog/2018/05/14/bgc-sdl2-line-rendering-engine)
 
 ## History
 
