@@ -434,7 +434,8 @@ We now have everything needed to render the lines to the screen
 
 ```fsharp
         lines         
-        |> transformLines (rotatePoint (angle) >> (translatePoint (200.0, 200.0)))
+        |> rotateLines (angle) 
+        |> translateLines (200.0,200.0)
         |> List.iter (fun (v1,v2) ->             
              renderer |> setDrawColor (v2.color |> drawColor)
              let x1,y1 = v1.points
