@@ -54,5 +54,3 @@ You can use descriptive variable names all you like, but only the F# compiler wi
 # End of article
 
 And in case you were wondering, it's costing me about 50 cents per mug.
-
-I have been working on the BGC game, just have not had time to write up any posts.
