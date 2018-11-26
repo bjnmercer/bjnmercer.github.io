@@ -4,11 +4,11 @@ title: "More Fun With F# Units of Measure"
 date: 2018-11-23
 ---
 
-Wow, 9 months have passed since the last post! I figure I would get back into the swing of things with a quick post.
+Wow, 6 months have passed since the last post! I have actually been working on my projects since, just have not found time to actually blog about it. I figure I would get back into the swing of things with a quick post.
 
 This article focuses on F# Units of Measure; perhaps *the* killer language feature.
 
-# Calculating the cost off a mug of coffee
+# Calculating the cost of a mug of coffee
 
 The problem was rather simple: I wanted to calculate how much each mug of coffee was costing me. I use an electric drip filter machine, which brews about 1.3 litres from 68 grams of coffee beans.
 
