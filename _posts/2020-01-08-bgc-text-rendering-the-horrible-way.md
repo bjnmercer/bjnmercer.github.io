@@ -10,7 +10,7 @@ date: 2020-01-08
 
 Wow, it's been nearly a year since my last post (*Update: it's now actually been more than a year*), and [more than] a year and a half since the last BGC post
 
-I'd love to say I've done heaps more on BGC but according to the last modified date, but alas. Also, I have yet to actually commit any code to github. So time to restart the blog and maybe that'll get me motivated again.
+I'd love to say I've done heaps more on BGC, but alas. Also, I have yet to actually commit any code to github. So time to restart the blog and maybe that'll get me motivated again.
 
 # Where we left off
 
