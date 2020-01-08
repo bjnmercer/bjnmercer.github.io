@@ -8,9 +8,9 @@ date: 2020-01-08
 
 # Slacker notice
 
-Wow, it's been nearly a year since my last post (*what is this, Project Crown!?* - Editor), and a year and a half since the last BGC post
+Wow, it's been nearly a year since my last post (*Update: it's now actually been more than a year*), and [more than] a year and a half since the last BGC post
 
-I'd love to say I've done heaps more on BGC but according to the last modified date, it's been 9 months. Also, I have yet to actually commit any code to github. So time to restart the blog and maybe that'll get me motivated again.
+I'd love to say I've done heaps more on BGC but according to the last modified date, but alas. Also, I have yet to actually commit any code to github. So time to restart the blog and maybe that'll get me motivated again.
 
 # Where we left off
 
@@ -33,6 +33,7 @@ SLEEP 2
 Text! Not just text, but _flashing text_ (note `COLOR 30` and `COLOR 20` mean bright yellow (flashing) and bright red (flashing).
 
 ![The start screen of the original QBASIC DOS based game](/assets/bgc/fonts2.gif)
+
 *Above: The start screen of the original QBASIC DOS based game*
 
 I'm supposed to faithly re-create this game and already I've hit a fairly massive roadblock...
@@ -80,7 +81,7 @@ Okay okay, I will admit it would be somewhat tedius to have to do that every tim
 Text rendering in SDL2 sure makes you appreciate all that must go on behind the scenes of the humble QBASIC PRINT command.
 
 My approach to the possible performance non-issue was to do the following:
-1. Find the perfect looking VGA BIOS font. Well how good is this?
+1. Find the perfect looking VGA BIOS font. [Well how good is this?](https://www.dafont.com/perfect-dos-vga-437.font)
 2. For each colour possible in QBASIC SCREEN 0 mode (16 colours), render each character from ASCII 32 to 126, and store into a font cache
 3. Calculate the position of each char and render it from the font cache
 
@@ -189,6 +190,7 @@ Well I have a game loop, so that shall be the "global timer". What follows is a 
 And just like the original game, I now have flashing text
 
 ![Yes, all that work for 2 seconds of flashing text](/assets/bgc/fonts2a.gif)
+
 *Above: Yes, all that work for 2 seconds of flashing text*
 
 Now you might be thinking "Shouldn't you be abstracting that code behind some generic Entity update system so that the game loop does not become cluttered?"
