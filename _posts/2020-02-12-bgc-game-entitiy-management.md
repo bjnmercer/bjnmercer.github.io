@@ -6,7 +6,7 @@ date: 2020-02-12
 
 >(Notice: this article is part of the [BGC Rewrite Series](/blog/2017/10/03/bgc-rewrite-series))
 
-In the previous article, I mentioned how solving the issue of flashing text led to a more generalised solution of game entity management. In this article, I discuss a simple solution to the problem of game loop clutter by introducing a *Poor Man's Game Engine*.
+In the [previous article](/blog/2020/01/08/bgc-text-rendering-the-horrible-way), I mentioned how solving the issue of flashing text led to a more generalised solution of game entity management. In this article, I discuss a simple solution to the problem of game loop clutter by introducing a *Poor Man's Game Engine*.
 
 So the game loop was starting to look like this
 
