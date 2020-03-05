@@ -268,12 +268,14 @@ So here you go, something to execute the function many times and measure the tot
   |> printfn "%d"
 ```
 
-This is drawing 1400 circles gradually increasing in size up to 100 pixels in radius. The times are
+This is drawing 1400 circles gradually increasing in size up to 100 pixels in radius. The times are:
 
+```fsharp
 403
 402
 380 
 396
+```
 
 OK we're ready to start optimising the function. An obvious starting point was to reduce the number of function calls to `SDL_RenderDrawPoint`, especially as there is an equivilent `SDL_RenderDrawPoints` which, as the name suggests, takes a list of points.
 
@@ -314,12 +316,14 @@ let renderDrawCircle1(_x, _y, radius) renderer =
          err <- err + tx - (radius * 2)
 ```
 
-The renderDrawCircle1 function takes a quarter of the time, by virtue of calling the `SDL_RenderDrawPoint` function 7 times less often.
+The renderDrawCircle1 function takes a quarter of the time, by virtue of calling the `SDL_RenderDrawPoint` function 7 times less often. Below are the times:
 
+```fsharp
 99
 96
 93
 93
+```
 
 The next optimisation that occurred to me is that there was no reason all the points of the circle couldn't be computed all at once
 
@@ -366,11 +370,13 @@ let renderDrawCircle2(_x, _y, radius) renderer =
 
 This function makes use of the `seq` capability to generate an as required number of points. Surprisingly, it's not much quicker:
 
+```fsharp
 74
 92
 76
 69
 71
+```
 
 For the 200 pixel wide circles there are 120 calls to the `SDL_RenderDrawPoints`, so you would think 120 calls less would make a difference. I suspect it's probably the use of `seq`; faster times might be realised switching to unfold or the like, but at this point I ... hang on, wait a minute
 
@@ -398,7 +404,7 @@ So I switched to the following code:
   |> printfn "%d"
 ```
 
-It seemed logical at the time: measure the total time taken to draw 100 explosion frames. But keep in mind you are now also measuring the Interation code. As it turns out, it adds about 2400 ticks to the total
+It seemed logical at the time: measure the total time taken to draw 100 explosion frames. But keep in mind you are now also measuring the Interation code. As it turns out, it adds about 2400 ticks to the total (abour 0.24 milliseconds)
 
 ```fsharp
   measureTime (fun () ->
@@ -407,12 +413,14 @@ It seemed logical at the time: measure the total time taken to draw 100 explosio
   |> printfn "%d"
 ```
 
+```fsharp
 2228
 2654
 2245
 2604
+```
 
-The answer is not to change the way you measure, but to increase the resolution of the timer. In this case, ElapsedTicks provides a higher resolution.
+In this case, 0.24 milliseconds is not much, but it's something to keep in mind. In this case, the answer is not to change the way you measure, but to increase the resolution of the timer. In this case, ElapsedTicks provides a higher resolution.
 
 ```fsharp
         let measureTime func = 
