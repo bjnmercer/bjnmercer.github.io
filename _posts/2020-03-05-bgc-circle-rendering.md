@@ -26,7 +26,7 @@ I must admit that in my previous job as a software developer, a lot of folks tho
 
 I did read library documentation (especially when it came to Delphi) and experimented in F# Interactive, but I am guilty of just looking at stackoverflow when I need a quick answer to a specific problem.
 
-The algorithm is known as Midpoint Algorithm, and the code can be found here: https://stackoverflow.com/a/38335842
+The algorithm is known as Midpoint Algorithm, and the code can be found here: [https://stackoverflow.com/a/38335842](https://stackoverflow.com/a/38335842)
 
 Just in case Stackoverflow ever goes away (and simultaneously ruins the careers of many developers :P ), the code is included here
 
@@ -108,9 +108,7 @@ let renderDrawCircle(_x, _y, radius) renderer =
 I bodged up some test explosion rendering code in the main game loop
 
 ```fsharp
-  let keys = sdlGetKeys
-
-  //keys.[int SDL.SDL_Scancode.SDL_SCANCODE_UP] |> //Array.iter (printfn "%d")
+  let keys = sdlGetKeys()
 
   for key in keys do
       if key = SDL.SDL_Scancode.SDL_SCANCODE_RETURN then                    
@@ -155,7 +153,7 @@ I have actually found timers to be a fairly versatile concept, but to talk about
 
 Anyway, one shiny new explosion generator, let's give it a run
 
-[Animated GIF: Lots of explosions, so little framerate](/assets/bgc/explosions1.gif)
+![Animated GIF: Lots of explosions, so little framerate](/assets/bgc/explosions1.gif)
 
 *Above: Lots of explosions, so little framerate*
 
@@ -510,7 +508,7 @@ Interestingly, there's not a lot of performance difference between v2 and v3. It
 
 Battle Ground Copyright is now one step closer to ripping off Liero!
 
-[Animated GIF: now with faster explosions!](/assets/bgc/explosions2.gif)
+![Animated GIF: now with faster explosions!](/assets/bgc/explosions2.gif)
 
 *Above: now with faster explosions!*
 
