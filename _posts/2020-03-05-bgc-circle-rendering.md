@@ -22,7 +22,7 @@ So I borrowed some code from Stackoverflow.
 
 # Stackoverflow Driven Development
 
-I must admit that in my previous job as a software developer, a lot of folks thought the work I did required some level of genious intellect, when in actual fact it just required one to know what to type into google search.
+I must admit that in my previous job as a software developer, a lot of folks thought the work I did required some level of genious intellect, when in actual fact it just required one to know what to type into google search. :P
 
 I did read library documentation (especially when it came to Delphi) and experimented in F# Interactive, but I am guilty of just looking at stackoverflow when I need a quick answer to a specific problem.
 
