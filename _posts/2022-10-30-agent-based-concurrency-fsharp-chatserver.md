@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Concurrent Programming - A Chat Server in F#"
+title: "Concurrent Programming: A Chat Server in F#"
 date: 2022-10-30
 ---
 
