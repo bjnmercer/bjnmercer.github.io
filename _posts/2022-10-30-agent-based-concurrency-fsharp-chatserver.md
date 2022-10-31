@@ -12,7 +12,7 @@ This is that article.
 
 ## Another Chat Server? Really?
 
-In the early days at my place of work, the preferred chat client of choice was MSN Messenger. I was not very fond of MSN Messenger; it used a lot of memory (at least 30 megabytes), it was slow, and it had annoying animated "emoticons". (don't get me started about MS Teams)
+In the early days at my place of work, the preferred chat client of choice was MSN Messenger. I was not very fond of MSN Messenger; it used a lot of memory (at least 30 megabytes), it was slow, and it had annoying animated "emoticons". (and now a decade later, MSN Messenger was lightweight...don't get me started about MS Teams)
 
 I realise that these are not good reasons to roll your own chat program, but I was young and I was also keen to learn multithreaded programming, so this seemed like a good exercise in <s>re-inventing the wheel</s> learning.
 
