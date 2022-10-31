@@ -12,7 +12,7 @@ This is that article.
 
 ## Another Chat Server? Really?
 
-At my place of work, the preferred chat client of choice was MSN Messenger. I was not very fond of MSN Messenger; it used a lot of memory (at least 30 megabytes), it was slow, and it had annoying animated "emoticons".
+In the early days at my place of work, the preferred chat client of choice was MSN Messenger. I was not very fond of MSN Messenger; it used a lot of memory (at least 30 megabytes), it was slow, and it had annoying animated "emoticons". (don't get me started about MS Teams)
 
 I realise that these are not good reasons to roll your own chat program, but I was young and I was also keen to learn multithreaded programming, so this seemed like a good exercise in <s>re-inventing the wheel</s> learning.
 
@@ -297,7 +297,7 @@ Finally, all the Commands that `SessionManager` can send to a Client Session are
     | AddUser of user:User
     | DeleteUser of userId:string
     | Stop
-```fsharp
+```
  
  
 And this is how those Client commands are translated into TCP streams:
