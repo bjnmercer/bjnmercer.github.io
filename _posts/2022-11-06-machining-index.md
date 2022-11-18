@@ -11,5 +11,6 @@ This is the index page for machining projects done in my shed.
 
 # Machining Index
 * [Introducing the Backyard Shed for Tooling And Research Development](/blog/2022/11/06/machining-introducing-my-shed)
+* [Easy Chair Repair using ONLY a welder and milling machine](/blog/2022/11/18/machining-easy-chair-repair)
 
 [^1]: as opposed to something integer.
